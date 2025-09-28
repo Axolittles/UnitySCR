@@ -1,4 +1,4 @@
-Generates a valid Screensaver file for Windows 10/11 (untested)
+Generates a valid Screensaver file for Windows 10 (tested)/11 (untested)
 
 <img width="659" height="821" alt="image" src="https://github.com/user-attachments/assets/e3a6dd71-ad2f-4765-aa40-3909903ff3f2" />
 
