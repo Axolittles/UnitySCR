@@ -4,10 +4,11 @@ Generates a valid Screensaver file for Windows 10 (tested)/11 (untested)
 
 Whatever is happening in the Screensaver scene will be drawn while the Screensaver is active. Input of any kind kills the screensaver.
 
-Caveats:
-  - Build and Run may not work as intended due to the post build script renaming the exe
-
 Usage:
   - Download and load the project
   - Build for Windows
   - Output Folder > Right-click .scr > Install
+
+Caveats:
+  - Build and Run may not work as intended due to the post build script renaming the exe
+  - No configuration window is generated/drawn for the Screensaver Config. The Screensaver will simply start instead.
