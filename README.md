@@ -1,15 +1,16 @@
 Generates a valid Screensaver file for Windows 10 (tested)/11 (untested)
-<img width="3840" height="2160" alt="image" src="https://github.com/user-attachments/assets/952b3dd2-da73-4286-8de9-9e8a417f32bf" />
-
-<img width="658" height="822" alt="image" src="https://github.com/user-attachments/assets/048e353d-b805-401c-93c1-42c9c74d605d" />
 
 Whatever is happening in the Screensaver scene will be drawn while the Screensaver is active. Input of any kind kills the screensaver.
+
+Includes a small demo scene of an island and a small config menu for demonstration purposes.
 
 Usage:
   - Download and load the project
   - Build for Windows
   - Output Folder > Right-click .scr > Install
 
-Caveats:
-  - Build and Run may not work as intended due to the post build script renaming the exe
-  - No configuration window is generated/drawn for the Screensaver Config. The Screensaver will simply start instead.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5e461078-a7fe-4573-b84e-e280e25bc87f" />
+
+<img width="330" height="410" alt="image" src="https://github.com/user-attachments/assets/7776085a-45c4-4fea-a536-bd087f06d9fc" />
+
+<img width="512" height="384" alt="image" src="https://github.com/user-attachments/assets/f3935367-1d29-4aca-be9e-813081b7db60" />
