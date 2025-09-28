@@ -310,7 +310,7 @@ public class ScreensaverBootstrap : MonoBehaviour
 
         if (args.Length <= 1)
         {
-            mode = SaverMode.Config; // double-click in Explorer → treat as configure
+            mode = SaverMode.Fullscreen;
             return;
         }
 
