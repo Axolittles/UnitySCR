@@ -21,8 +21,9 @@ public sealed class ScreensaverPostBuild : IPostprocessBuildWithReport
 
         // If a .scr already exists from a previous build, remove it
         TryDeleteIfExists(scrPath);
-        // Rename .exe -> .scr
-        File.Move(exePath, scrPath);
+        // Copy exe to scr, we copy so we can maintain Build and Run behaviour
+        // The exe is not actually needed for the Screensaver to run
+        File.Copy(exePath, scrPath);
 
         Debug.Log($"[Screensaver] Renamed to: {scrPath}");
     }

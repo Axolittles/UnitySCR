@@ -16,7 +16,7 @@ using UnityEngine;
 public class IslandMarchingCubes : MonoBehaviour
 {
     [Header("Grid / Isosurface")]
-    [Range(16, 128)] public int size = 64;          // grid resolution on each axis
+    [Range(16, 256)] public int size = 64;          // grid resolution on each axis
     public float isoLevel = 0f;                     // target iso-surface value
     public Vector3 cellScale = Vector3.one * 1.0f;  // world scale per voxel cell
 
