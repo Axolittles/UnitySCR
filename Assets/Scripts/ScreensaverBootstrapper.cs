@@ -382,6 +382,7 @@ public class ScreensaverBootstrap : MonoBehaviour
     void QuitSaver()
     {
         if (cursorHidden) ShowCursor(true);
+        Screen.SetResolution(1, 1, FullScreenMode.Windowed);
         Application.Quit();
     }
 }
