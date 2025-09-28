@@ -2,8 +2,6 @@
 using System;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Diagnostics;
-using System.Text;
 using UnityEngine;
 
 public class ScreensaverBootstrap : MonoBehaviour
@@ -67,11 +65,13 @@ public class ScreensaverBootstrap : MonoBehaviour
 
     void Update()
     {
+#if !UNITY_EDITOR
         if (!cursorHidden && mode != SaverMode.Config)
         {
             ShowCursor(false);
             cursorHidden = true;
-        }
+        }  
+#endif
 
         // Exit policy: after a brief grace period, any input closes the saver
         if (mode != SaverMode.Config)
@@ -80,11 +80,9 @@ public class ScreensaverBootstrap : MonoBehaviour
             if (idleTimer >= idleGrace)
             {
                 // Mouse moved?
-                if (Input.mousePosition != lastMouse)
-                    QuitSaver();
+                if (Input.mousePosition != lastMouse) QuitSaver();
                 // Any key or click?
-                if (Input.anyKeyDown || Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
-                    QuitSaver();
+                if (Input.anyKeyDown || Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) QuitSaver();
             }
             lastMouse = Input.mousePosition;
         }
@@ -127,7 +125,7 @@ public class ScreensaverBootstrap : MonoBehaviour
     {
         // Try the active window, then foreground; verify it belongs to this process.
         var candidates = new[] { GetActiveWindow(), GetForegroundWindow() };
-        uint myPid = (uint)Process.GetCurrentProcess().Id;
+        uint myPid = (uint)System.Diagnostics.Process.GetCurrentProcess().Id;
         foreach (var h in candidates)
         {
             if (h != IntPtr.Zero && IsWindow(h))

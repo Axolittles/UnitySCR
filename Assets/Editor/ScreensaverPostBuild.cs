@@ -3,36 +3,28 @@ using System.IO;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
+using UnityEngine;
 
-public sealed class ScreensaverPostBuild :
-    IPostprocessBuildWithReport
+public sealed class ScreensaverPostBuild : IPostprocessBuildWithReport
 {
-    // Run fairly early
     public int callbackOrder => 0;
 
     public void OnPostprocessBuild(BuildReport report)
     {
         var target = report.summary.platform;
 
-        // Only handle Windows Standalone builds
-        if (target != BuildTarget.StandaloneWindows && target != BuildTarget.StandaloneWindows64)
-            return;
-
-        // Unity’s outputPath points to the built .exe
+        if (target != BuildTarget.StandaloneWindows && target != BuildTarget.StandaloneWindows64) return;
         var exePath = report.summary.outputPath;
-        if (!exePath.EndsWith(".exe", System.StringComparison.OrdinalIgnoreCase))
-            return;
+        if (!exePath.EndsWith(".exe", System.StringComparison.OrdinalIgnoreCase)) return;
 
         var scrPath = Path.ChangeExtension(exePath, ".scr");
 
         // If a .scr already exists from a previous build, remove it
         TryDeleteIfExists(scrPath);
-
         // Rename .exe -> .scr
         File.Move(exePath, scrPath);
 
-        // Log a friendly note in the Console
-        UnityEngine.Debug.Log($"[Screensaver] Renamed to: {scrPath}");
+        Debug.Log($"[Screensaver] Renamed to: {scrPath}");
     }
 
     private static void TryDeleteIfExists(string path)
