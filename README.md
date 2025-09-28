@@ -1,6 +1,7 @@
 Generates a valid Screensaver file for Windows 10 (tested)/11 (untested)
+<img width="3840" height="2160" alt="image" src="https://github.com/user-attachments/assets/952b3dd2-da73-4286-8de9-9e8a417f32bf" />
 
-<img width="659" height="821" alt="image" src="https://github.com/user-attachments/assets/e3a6dd71-ad2f-4765-aa40-3909903ff3f2" />
+<img width="658" height="822" alt="image" src="https://github.com/user-attachments/assets/048e353d-b805-401c-93c1-42c9c74d605d" />
 
 Whatever is happening in the Screensaver scene will be drawn while the Screensaver is active. Input of any kind kills the screensaver.
 
